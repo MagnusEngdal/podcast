@@ -1,0 +1,41 @@
+{
+  "name": "acast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec 'npm run lint && babel-node server/index.js'",
+    "lint": "eslint ./server/**/**/*.js",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && babel -d ./dist ./server",
+    "test": "npm run test:integration",
+    "test:integration": "mocha --opts test/mocha.integration"
+  },
+  "author": "Magnus Engdal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "rss-parser": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^5.2.0",
+    "nock": "^10.0.6",
+    "nodemon": "^1.18.9"
+  }
+}

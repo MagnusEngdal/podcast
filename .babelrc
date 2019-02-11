@@ -1,0 +1,16 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "8.9.3"
+      },
+      "debug": true
+    }]
+  ],
+  "plugins": [
+    "transform-class-properties"
+  ],
+  "ignore": [
+    "node_modules"
+  ]
+}
