@@ -32,13 +32,6 @@ async function getChecksumFromUrl(url) {
           hash.update(data);
         });
 
-        req.on('error', (err) => {
-          console.log(err);
-          if (err.code === 'ECONNRESET') {
-            console.log('Timeout occurs');
-          }
-        });
-
         // On data end, resolve promise.
         return req.on('end', resolve);
       });
