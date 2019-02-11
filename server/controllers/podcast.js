@@ -8,6 +8,8 @@ const parser = new Parser();
 /**
  * GET transformed cast list from RSS url
  * @param {string} params.url - RSS url
+ * @param {number} query.limit - Number of items to take
+ * @param {number} query.start - On what item to start
  * @returns [Episode] list of podcast episodes with checksums
  */
 async function getChecksumListFromRssUrl({ params, query }, res, next) {
@@ -24,6 +26,7 @@ async function getChecksumListFromRssUrl({ params, query }, res, next) {
     return next(APIError(e.message));
   }
 
+  // Limit result to a subset of items based on start and limit
   if (limit) {
     if (start) {
       feed.items = feed.items.slice(start, limit);

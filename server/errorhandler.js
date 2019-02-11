@@ -7,7 +7,7 @@ class APIErrorClass {
 }
 
 /**
- * @returns Error instance of Error with statusCode to return to client
+ * @returns Error - instance of Error with statusCode to return to client
  */
 export const APIError = (message, code) => {
   const err = new Error(message);

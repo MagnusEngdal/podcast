@@ -5,8 +5,8 @@ import config from '../config';
 
 /**
  * Fetch a file from provided url and generate a checksum.
- * @param string url
- * @returns string checksum
+ * @param string - url
+ * @returns string - checksum
  */
 async function getChecksumFromUrl(url) {
   let checksum = null;
